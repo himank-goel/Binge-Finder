@@ -60,6 +60,12 @@ class Card extends Component {
             </div>
         )
     }
+
+    componentDidUpdate() {
+        const data = this.props.data;
+        let backdropIMG = 'https://image.tmdb.org/t/p/original' + data.backdrop_path;
+        document.body.style.backgroundImage = 'url(' + backdropIMG + ')';
+    }
 }
 
 export default Card;

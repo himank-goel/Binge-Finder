@@ -18,6 +18,7 @@ class App extends Component {
         this.setState({
             movieID: newId,
         })
+        this.fetchApi();
     }
 
     fetchApi() {
@@ -37,9 +38,7 @@ class App extends Component {
 
 
     render(){
-        let currentId = 0;
-        if(this.state.data === null || this.state.movieID === currentId) {
-            currentId = this.state.movieID;
+        if(this.state.data === null) {
             this.fetchApi();
             console.log("hello");
         }
