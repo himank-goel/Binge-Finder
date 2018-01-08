@@ -13,12 +13,12 @@ class App extends Component {
     }
 
     handler(newId, e) {
-        console.log(newId, e);
         e.preventDefault();
         this.setState({
-            movieID: newId,
-        })
-        this.fetchApi();
+            movieID: newId
+        }, function() {
+            this.fetchApi();
+        });        
     }
 
     fetchApi() {
