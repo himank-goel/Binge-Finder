@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import SearchBox from './SearchBox';
+import Card from './Card';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
             movieID: 157336,
-            json: null
+            data: null
         }
     }
 
@@ -17,18 +19,25 @@ class App extends Component {
         })
         .then(response => response.json())
         .then(json => {
-            this.setState({json});
+            this.setState({
+                data: json,
+            });
         })
     }
 
+
+
     render(){
-        //this.fetchApi();
+        if(this.state.data === null) {
+            this.fetchApi();
+        }
         //console.log(this.state.json);
         return(
             <div>
-                hello
-            {/* <SearchBox fetchMovieID={this.fetchMovieID.bind(this)}/>
-            <Card data={this.state}/> */}
+                <SearchBox />
+                {
+                    (this.state.data !== null) ? <Card data={this.state.data}/> : <div> Hello </div>
+                }
             </div>
         )
     }
