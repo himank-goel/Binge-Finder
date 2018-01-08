@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 
 class Card extends Component {
 
+    componentDidMount() {
+        const data = this.props.data;
+        let backdropIMG = 'https://image.tmdb.org/t/p/original' + data.backdrop_path;
+        document.body.style.backgroundImage = 'url(' + backdropIMG + ')';
+      }
+
     render(){
         const data = this.props.data;
         console.log(this.props.data);

@@ -5,10 +5,19 @@ import Card from './Card';
 class App extends Component {
     constructor(props) {
         super(props);
+        this.handler = this.handler.bind(this);
         this.state = {
             movieID: 157336,
             data: null
         }
+    }
+
+    handler(newId, e) {
+        console.log(newId, e);
+        e.preventDefault();
+        this.setState({
+            movieID: newId,
+        })
     }
 
     fetchApi() {
@@ -28,13 +37,15 @@ class App extends Component {
 
 
     render(){
-        if(this.state.data === null) {
+        let currentId = 0;
+        if(this.state.data === null || this.state.movieID === currentId) {
+            currentId = this.state.movieID;
             this.fetchApi();
+            console.log("hello");
         }
-        //console.log(this.state.json);
         return(
             <div>
-                <SearchBox />
+                <SearchBox action = {this.handler} />
                 {
                     (this.state.data !== null) ? <Card data={this.state.data}/> : <div> Hello </div>
                 }

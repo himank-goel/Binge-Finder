@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 class SearchBox extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            movieId: 0,
+        }
+    }
+
     render(){
         return(
             <div className = "col-xs-12">
@@ -11,7 +18,21 @@ class SearchBox extends Component {
                     </div>
                     <div className="col-xs-12 col-sm-6 col-lg-7">
                         <form>
-                            <input placeholder = "Search TV Show or Movie" />
+                            <input 
+                                onChange = {
+                                    event => this.setState({
+                                        movieId: event.target.value
+                                    })
+                                } 
+                                onKeyPress = {
+                                    event => {
+                                        if(event.key === 'Enter') {
+                                            this.props.action(this.state.movieId, event)
+                                        }
+                                    }
+                                }
+                                placeholder = "Search TV Show or Movie" 
+                            />
                         </form>
                     </div>
                 </div>
