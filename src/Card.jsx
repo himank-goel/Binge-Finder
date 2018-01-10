@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import './styles/card.css';
 
 class Card extends Component {
 
@@ -39,7 +40,7 @@ class Card extends Component {
             posterIMG = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSols5HZxlQWyS9JY5d3_L9imbk0LiziHiyDtMZLHt_UNzoYUXs2g';
         };  
         return(
-            <div className="col-xs-12 cardcont nopadding">
+            <div className="col-xs-12 card-container nopadding">
                 <div className="meta-data-container col-xs-12 col-md-8 push-md-4 col-lg-7 push-lg-5">
                     <h1>{movieTitle}</h1>
                     <span className="tagline">{tagline}</span>
