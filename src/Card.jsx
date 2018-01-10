@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './styles/card.css';
+import './styles/style.css';
 
 class Card extends Component {
 

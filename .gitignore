@@ -9,6 +9,9 @@
 # production
 /build
 
+.sass-cache/
+/bower-components
+
 # misc
 .DS_Store
 .env.local
