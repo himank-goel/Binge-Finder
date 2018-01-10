@@ -9,8 +9,8 @@
 # production
 /build
 
+bower_components/
 .sass-cache/
-/bower-components
 
 # misc
 .DS_Store
