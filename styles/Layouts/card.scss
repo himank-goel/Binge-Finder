@@ -37,6 +37,8 @@
       }
   
       .release-details {
+        font-size: 1.3em;
+
         div {
           &:nth-child(n+3) {
             margin-top: 15px;
@@ -57,8 +59,12 @@
     display: block;
     padding-bottom: 0.25em;
     color: $limeGreen;
-    font-size: 1.3em;
+    font-size: 1.7em;
     font-family: $oswald;
+  }
+
+  .p {
+    font-size: 1.3em;
   }
   
   /* Breakpoints */

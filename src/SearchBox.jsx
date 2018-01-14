@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import './styles/style.css';
 
 class SearchBox extends Component {
     constructor(props){
@@ -11,14 +12,16 @@ class SearchBox extends Component {
 
     render(){
         return(
-            <div className = "col-xs-12">
+            <div className = "col-xs-12 search-container nopadding">
                 <div className = "row">
-                    <div className = "col-xs-12 col-sm-6 col-lg-5">
-                        <h1>Binge Finder</h1>
+                    <div className = "col-xs-12 col-sm-6 col-lg-5 title">
+                        <h1 className = "heading">Binge Finder</h1>
                     </div>
                     <div className="col-xs-12 col-sm-6 col-lg-7">
-                        <form>
-                            <input 
+                        <form className="searchbox">
+                            <input
+                                ref="search-suggestion"
+                                className="searchbox__input typeahead form-control"
                                 onChange = {
                                     event => this.setState({
                                         movieId: event.target.value
